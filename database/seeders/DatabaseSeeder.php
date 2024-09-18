@@ -15,11 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::query()->truncate();
-        Category::query()->truncate();
-        $user=User::factory()->create();
-        $hob=Category::create(['name' => 'Hobby', 'slug' => 'hobby']);
-        $work=Category::create(['name' => 'Work', 'slug' => 'work']);
-        Post::create(['user_id'=>$user->id,'Category_id'=>$work->id,'title'=>'tileeeee','body'=>'dasdsfasdfasd']);
+        Post::factory(10)->create();
+        // User::query()->truncate();
+        // Category::query()->truncate();
+        // $user=User::factory()->create();
+        // $hob=Category::create(['name' => 'Hobby', 'slug' => 'hobby']);
+        // $work=Category::create(['name' => 'Work', 'slug' => 'work']);
+        // Post::create(['user_id'=>$user->id,'Category_id'=>$work->id,'title'=>'tileeeee','body'=>'dasdsfasdfasd']);
     }
 }
